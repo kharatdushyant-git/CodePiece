@@ -3,24 +3,23 @@
 //  Problem  : 4A - Watermelon
 //  Platform : Codeforces
 //  Rating   : 800
-//  Language : GNU G++20
+//  Language : GNU C11
 //
 /////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////
 //
 //  Header Files
-//  bits/stdc++.h : Includes all standard C++ standard libraries.
+//  stdio.h : Used for standard input and output functions.
 //
 /////////////////////////////////////////////////////////////////////////
 
-#include <bits/stdc++.h>
-using namespace std;
+#include<stdio.h>
 
 /////////////////////////////////////////////////////////////////////////
 //
 //  User Defined Data Types
-//  BOOL : Represents Boolean values using bool type.
+//  BOOL : Represents Boolean values using int type.
 //
 //  User Defined Constants
 //
@@ -29,10 +28,10 @@ using namespace std;
 //
 /////////////////////////////////////////////////////////////////////////
 
-typedef bool BOOL;
+typedef int BOOL;
 
-#define TRUE true
-#define FALSE false
+#define TRUE 1
+#define FALSE 0
 
 /////////////////////////////////////////////////////////////////////////
 //
@@ -47,7 +46,7 @@ typedef bool BOOL;
 
 BOOL CheckWaterMelon(int iNo)
 {
-    if ((iNo > 2) && (iNo % 2 == 0))
+    if((iNo > 2) && (iNo % 2 == 0))
     {
         return TRUE;
     }
@@ -71,28 +70,20 @@ BOOL CheckWaterMelon(int iNo)
 
 int main()
 {
-    
-    // Improves the speed of input and output operations.
-
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-
-    // Logic
     int iWeight = 0;
     BOOL bRet = FALSE;
 
-    cin >> iWeight;
+    scanf("%d", &iWeight);
 
     bRet = CheckWaterMelon(iWeight);
 
-    if (bRet == TRUE)
+    if(bRet == TRUE)
     {
-        cout << "YES\n";
+        printf("YES\n");
     }
     else
     {
-        cout << "NO\n";
+        printf("NO\n");
     }
 
     return 0;
